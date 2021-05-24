@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDate;
 
 @Document
+@SuppressWarnings("unused")
 public class Todo {
     /**
      * Unique Identifier for the To-do task
