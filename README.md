@@ -46,4 +46,31 @@ If we don’t specify _spring.data.mongodb.database=todoApp_db_, MongoDB server 
 Other than the above mentioned changes, no other changes are required to run this project.
 
 ## Running the application locally
-Running this project is same as explained in **[microservice-springboot-h2](https://github.com/prasbhat/microservice-springboot-h2/blob/master/README.md/#running-the-application-locally)** project.
+There are several ways to run a Spring Boot application on your local machine. 
+
+### Using Main method
+Clone the repository to your local drive.
+```shell
+git clone https://github.com/prasbhat/microservice-springboot-mongodb.git
+```
+Import the project as "Maven Project" into your favourite IDE and execute the `main` method in the `com.myzonesoft.microservice.todo.MicroserviceSpringbootMongodbApplication` class from your IDE.
+```shell
+Right Click on the file and Run as Java Application
+```
+
+### Running the application with Maven
+Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html) like so:
+```shell
+git clone https://github.com/prasbhat/microservice-springboot-mongodb.git
+cd microservice-springboot-mongodb
+mvn spring-boot:run
+```
+
+### Running the application with Executable JAR
+The code can also be built into a jar and then executed/run. Once the jar is built, run the jar by double clicking on it or by using the command: 
+```shell
+git clone https://github.com/prasbhat/microservice-springboot-mongodb.git
+cd microservice-springboot-mongodb
+mvn package -DskipTests
+java -jar target/microservice-springboot-h2-0.0.1-SNAPSHOT.jar
+```
