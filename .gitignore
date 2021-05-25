@@ -5,6 +5,7 @@ mvnw*
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+*.bat
 
 ### STS ###
 .apt_generated

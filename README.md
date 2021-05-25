@@ -1,13 +1,10 @@
 # microservice-springboot-mongodb
-I have created a simple ***microservice application* using Java Spring Boot framework**, which will act as backend and expose the REST APIs, mentioned in the table below:
-| CRUD Operation | HTTP Method | REST API Endpoint |
-|----------------|-------------|-------------------|
-| CREATE | POST	| `/create` |
-| READ	| GET	| `/findAll` & `/find/{id}` |
-| UPDATE | PUT	| `/update` |
-| DELETE | DELETE | `/deleteById/{id}` |
+This project is based on **[microservice-springboot-h2](https://github.com/prasbhat/microservice-springboot-h2/blob/master/README.md)** project. 
+
+Functionally both the projects work in a similar way, with changes related only to database configuration. The main differences in codes are shown [below](#differences-between-two-spring-boot-projects).
 
 I have used NOSQL database ***MongoDB***, to store the data. 
+
 Database related settings are placed in _/src/main/resources/application.properties_ file.
 
 ## Requirements
@@ -16,10 +13,11 @@ Database related settings are placed in _/src/main/resources/application.propert
 - [Maven](https://maven.apache.org/) - Dependency Management
 - [Tomcat](http://tomcat.apache.org/) - The Apache Tomcat® is a Java Servlet container used as web server for running the application
 - [MongoDB](https://www.mongodb.com/try/download/community) - MongoDB is a document-oriented database. It is a key feature of MongoDB. It is very simple you can program it easily.
+- [Intellij IDEA IDE](https://www.jetbrains.com/idea/download/#section=windows) - An IDE for developing the code. You can use any IDE, I have used Intellij IDEA IDE.
 
 ## Differences between two Spring Boot Projects
-This project is based on previous **[microservice-springboot-h2](/microservice-springboot-h2)** project. Both are very similar with specific changes related to database configuration. Given below are the changes:
-- _pom.xml_
+ Given below are the changes:
+- _pom.xml_ - Add the following dependency
 ```
 <dependency>
 	<groupId>org.springframework.boot</groupId>
@@ -28,13 +26,13 @@ This project is based on previous **[microservice-springboot-h2](/microservice-s
 ```
 - _model=com.myzonesoft.microservice.todo.model.Todo_
 ```
- - instead of @Entity mark this model class with @Document, because everything is stored as Documents in MongoDB.
+ - Instead of @Entity, mark this model class with @Document, because everything is stored as Documents in MongoDB.
  - We don’t need @GeneratedValue on the primary key, as MongoDB would generate the primary key automatically. 
  - Primary key will be of type String, as it is a hexadecimal alphanumeric value.
 ```
 - _repository interface = com.myzonesoft.microservice.todo.repository.TodoRepository_
 ```
- - Repository would extend the MongoRepository (instead of JPARepository earlier)
+ - Repository would extend the MongoRepository (instead of JPARepository)
 ```
 - _/src/main/resources/application.properties_ - We have to change the data source in this file and map the MongoDB related settings.
 ```
@@ -47,4 +45,5 @@ If we don’t specify _spring.data.mongodb.database=todoApp_db_, MongoDB server 
 
 Other than the above mentioned changes, no other changes are required to run this project.
 
-URL to access the Microservice REST APIs, remains same (unless we decide to change the port): [http://localhost:8080/Todo/](http://localhost:8080/Todo/)
+## Running the application locally
+Running this project is same as explained in **[microservice-springboot-h2](https://github.com/prasbhat/microservice-springboot-h2/blob/master/README.md/#running-the-application-locally)** project.
