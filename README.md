@@ -3,7 +3,7 @@ This project is based on **[microservice-springboot-h2](https://github.com/prasb
 
 Functionally both the projects work in a similar way, with changes related only to database configuration. The main differences in codes are shown [below](#differences-between-two-spring-boot-projects).
 
-I have used NOSQL database ***MongoDB***, to store the data. 
+I will be using the No SQL database known as ***MongoDB***, to persist the data. MongoDB is a No SQL database. It is an open-source, cross-platform, document-oriented database.
 
 Database related settings are placed in _/src/main/resources/application.properties_ file.
 
@@ -24,16 +24,19 @@ Database related settings are placed in _/src/main/resources/application.propert
 	<artifactId>spring-boot-starter-data-mongodb</artifactId>
 </dependency>
 ```
+
 - _model=com.myzonesoft.microservice.todo.model.Todo_
+
 ```
- - Instead of @Entity, mark this model class with @Document, because everything is stored as Documents in MongoDB.
- - We don’t need @GeneratedValue on the primary key, as MongoDB would generate the primary key automatically. 
- - Primary key will be of type String, as it is a hexadecimal alphanumeric value.
+- Replace @Entity with @Document, because everything is stored as Documents in MongoDB.
+- We don’t need @GeneratedValue on the primary key, as MongoDB would generate the primary key automatically.  
+- Primary key will be of type String, as it is a hexadecimal alphanumeric value.
 ```
+
 - _repository interface = com.myzonesoft.microservice.todo.repository.TodoRepository_
-```
- - Repository would extend the MongoRepository (instead of JPARepository)
-```
+
+`Repository would extend the MongoRepository (instead of JPARepository)`
+
 - _/src/main/resources/application.properties_ - We have to change the data source in this file and map the MongoDB related settings.
 ```
 spring.data.mongodb.database=todoApp_db
@@ -54,9 +57,8 @@ Clone the repository to your local drive.
 git clone https://github.com/prasbhat/microservice-springboot-mongodb.git
 ```
 Import the project as "Maven Project" into your favourite IDE and execute the `main` method in the `com.myzonesoft.microservice.todo.MicroserviceSpringbootMongodbApplication` class from your IDE.
-```shell
-Right Click on the file and Run as Java Application
-```
+
+`Right Click on the file and Run as Java Application`
 
 ### Running the application with Maven
 Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html) like so:

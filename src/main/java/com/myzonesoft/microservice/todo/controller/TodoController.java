@@ -39,7 +39,7 @@ public class TodoController implements TodoApplicationConstants {
      *
      * @return List of all items of the To-do tasks
      */
-    @GetMapping("/findAll")
+    @GetMapping({"/findAll", "/"})
     public List<Todo> findAllTodoList() {
         String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
         LOGGER.info(MessageFormat.format(LOGGER_ENTRY, className, methodName));
