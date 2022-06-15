@@ -81,5 +81,7 @@ The code can also be built into a jar and then executed/run. Once the jar is bui
 git clone https://github.com/prasbhat/microservice-springboot-mongodb.git
 cd microservice-springboot-mongodb
 mvn package -DskipTests
-java -jar target/microservice-springboot-h2-0.0.1-SNAPSHOT.jar
+java -jar target/microservice-springboot-mongodb-0.0.1-SNAPSHOT.jar
 ```
+
+More detailed documentation regarding this project can be found [here](https://myzonesoft.com/post/microservice-springboot-mongodb/).
