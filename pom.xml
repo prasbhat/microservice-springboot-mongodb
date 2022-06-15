@@ -8,15 +8,11 @@
 		<version>2.4.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.myzonesoft.fullstack.architecture</groupId>
+	<groupId>com.myzonesoft.todo</groupId>
 	<artifactId>microservice-springboot-mongodb</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>microservice-springboot-mongodb</name>
 	<description>Project for Spring Boot with MongoDB Database</description>
-
-	<properties>
-		<java.version>14</java.version>
-	</properties>
 
 	<dependencies>
 		<dependency>
@@ -26,6 +22,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.22</version>
 		</dependency>
 
 		<dependency>
