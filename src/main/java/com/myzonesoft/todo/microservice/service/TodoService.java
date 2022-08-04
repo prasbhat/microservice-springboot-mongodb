@@ -27,6 +27,7 @@ import java.util.stream.Stream;
  * In this service class data is fetched from database
  */
 @Service
+@SuppressWarnings("unused")
 public class TodoService implements TodoApplicationConstants {
 
     //Variable declarations
@@ -112,10 +113,10 @@ public class TodoService implements TodoApplicationConstants {
 
         //Save the TodoTaskComments before task can be saved
         if(todoTaskCommentsSet != null) {
-            for (TodoTaskComments todoTaskComments : todoTaskCommentsSet) {
-                if (todoTaskComments != null && todoTaskComments.getTodoTaskCommentsId() == null && !todoTaskComments.getTaskComments().isEmpty()) {
-                    todoTaskComments.setCreationDate(LocalDate.now());
-                    todoTaskCommentsRepository.save(todoTaskComments);
+            for (TodoTaskComments todoTaskComment : todoTaskCommentsSet) {
+                if (todoTaskComment != null && !todoTaskComment.getTaskComments().isEmpty()) {
+                    todoTaskComment.setCreationDate(LocalDate.now());
+                    todoTaskCommentsRepository.save(todoTaskComment);
                 }
             }
         }
